@@ -1,0 +1,20 @@
+{
+    "label": {
+        "edgeCloud": "Edge Cloud",
+        "cucp": "CU-CP",
+        "cuup":"CU-UP",
+        "edge_cloud_numberOfNodes":"Edge Cloud Number Of Nodes",
+        "edge_cloud_numberOfControllers": "Edge Cloud Number Of Controllers",
+        "cucp_cloud_numberOfNodes": "CUCP Cloud Number Of Nodes",
+        "cucp_cloud_numberOfControllers": "CUCP Cloud Number Of Controllers",
+        "cucp_gNBId":"CUCP GNB ID",
+        "cucp_deployment_name":"CUCP Deployment Name",
+        "cuup_cloud_numberOfNodes": "CUUP Cloud Number Of Nodes",
+        "cuup_cloud_numberOfControllers": "CUUP Cloud Number Of Controllers",
+        "cuup_gNBId":"cuup GNB ID",
+        "cuup_deployment_name":"CUUP Deployment Name",
+        "networking": "Network Configuration",
+        "subnet": "Subnet Configuration",
+        "interface": "Interface Related Configuration"
+    }
+}

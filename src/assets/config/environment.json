@@ -1,0 +1,8 @@
+{
+    "production": false,
+    "settings": {
+        "userMngmtService": "http://10.45.176.152:8765",
+        "applicationName": "SO TOOL",
+        "appVersion": "v 1.0.0"
+    }
+}

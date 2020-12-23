@@ -1,0 +1,46 @@
+{
+    "routes": {
+        "dashboard":{
+            "prevRoutePath":"",
+            "nextRoutePath":"/venue_planning/venue_details",
+            "prevBtnLabel":"",
+            "nextBtnLabel":"Venue Details"
+        },
+        "venue_details": {
+            "prevRoutePath":"/dashboard",
+            "nextRoutePath":"/venue_planning/import_files",
+            "prevBtnLabel":"Dashboard",
+            "nextBtnLabel":"Import Input Files"
+        },       
+        "import_files": {
+            "prevRoutePath":"/venue_planning/venue_details",
+            "nextRoutePath":"/venue_planning/venue_configuration/gNodeB/1/cucp_config",
+            "prevBtnLabel":"Venue Details",
+            "nextBtnLabel":"Venue Configurations"
+        },
+        "cucp_config": {
+            "prevRoutePath":"/venue_planning/import_files",
+            "nextRoutePath":"/venue_planning/venue_configuration/gNodeB/1/cuup_config",
+            "prevBtnLabel":"Import Input Files",
+            "nextBtnLabel":"CUUP Configurations"
+        },
+        "cuup_config": {
+            "prevRoutePath":"/venue_planning/venue_configuration/gNodeB/1/cucp_config",
+            "nextRoutePath":"/venue_planning/venue_configuration/gNodeB/1/du_config",
+            "prevBtnLabel":"CUCP Configurations",
+            "nextBtnLabel":"DU Configurations"
+        },
+        "du_config": {
+            "prevRoutePath":"/venue_planning/venue_configuration/gNodeB/1/cuup_config",
+            "nextRoutePath":"/venue_planning/venue_configuration/gNodeB/1/radio_units",
+            "prevBtnLabel":"CUUP Configurations",
+            "nextBtnLabel":"Radio Units"
+        },
+        "radio_units": {
+            "prevRoutePath":"/venue_planning/venue_configuration/gNodeB/1/du_config",
+            "nextRoutePath":"/venue_planning/venue_configuration/gNodeB/1/radio_units",
+            "prevBtnLabel":"DU Configurations",
+            "nextBtnLabel":"gNodeB Network Configuration"
+        }
+    }
+}

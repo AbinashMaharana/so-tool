@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+
+    <div class="form-group row" *ngFor="let field of config">        
+       
+        <label class="control-label col-md-4" for="customer">{{field.label}}<sup *ngIf="field.required"
+                class="text-danger">*</sup></label>
+        <div class="col-md-4">
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="form-control custom-file-input" id="fileUpload" ng2FileSelect
+                        [uploader]="uploader" [accept]="fileType.toString()" (change)="handleUpload($event)"
+                        (onFileSelected)="onFileSelected(field,$event)" [formControlName]="field.name">
+                    <label class="custom-file-label" for="fileUpload">{{field.fileName}} </label>
+                </div>
+
+            </div>
+            <div class="mt-2">Supported file extensions {{supportedFiles}}</div>
+            <div class="mt-5">
+               
+            </div>
+        </div>
+        <div class="col-md-1 text-center">
+            <a class="btn-circle" href="/images/myw3schoolsimage.jpg" download="{{importedFile}}">
+                <span class="fa fa-download"></span>
+            </a>
+
+        </div>
+        <div class="col-md-3 text-center">
+            <a class="btn btn-light border col-12" href="/images/myw3schoolsimage.jpg" download="{{sampleFileName}}"
+                placement="bottom" ngbTooltip="{{field.tooltipInfo}}">Download Sample File</a>
+        </div>
+      <hr *ngIf="config.length > 1" style="width:100%"/>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <button class="btn btn-primary col-md-12" [disabled]="!form.valid" (click)="importFiles();">Import</button>
+        </div>
+    </div>
+</form>

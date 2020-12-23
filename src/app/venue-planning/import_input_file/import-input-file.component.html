@@ -1,0 +1,8 @@
+<span class="text-danger">*</span>  Indicates mandatory configurations
+<div class="card mt-1">    
+    <div class="card-body">        
+        <so-import-file [form]="form" [config]="importConfig" [fileType]="fileType"
+            [importedFile]="importedFile" [sampleFileName]="sampleFileName" [supportedFiles]="supportedFiles"
+            (emitMultiFileImport)="importFiles($event)"></so-import-file>
+    </div>
+</div>

@@ -3,8 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl : "http://10.237.172.133",
+  propMgmtPort : "7776",
+  dataCollectPort : "7774",
+  workflowPort : "8082",
+  ossServicePort: "8088",
+  delayInterval : 5000,
+  debug: true,
+  log: {
+    auth: false,
+    store: false,
+  },
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

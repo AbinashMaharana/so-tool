@@ -1,0 +1,24 @@
+.breadcrumb .breadcrumb-item:nth-child(2)::before {
+    content: "" !important;
+}
+
+.breadcrumb .breadcrumb-item:nth-child(2) {
+    padding-left: 0px !important;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: " > "
+}
+
+ul.breadcrumb {
+    background-color: transparent !important;
+    padding: 0px !important;
+    margin: 5px !important;
+}
+
+li.breadcrumb-item>a {
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}

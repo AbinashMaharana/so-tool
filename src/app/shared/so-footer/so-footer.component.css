@@ -1,0 +1,15 @@
+.custom-footer{
+   margin-bottom: 10px;
+   position: fixed;
+   float: left;
+   width: 94.1%;
+   bottom: 0px;
+}
+
+.custom-width{
+   width: 82.1%;
+}
+
+.btn{
+   padding: 10px !important;
+}

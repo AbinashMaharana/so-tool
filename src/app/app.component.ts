@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+
+declare const require: any;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'so-tool';
-}
+  constructor(ngbConfig: NgbConfig) {
+    ngbConfig.animation = false;
+  }
+ }

@@ -1,0 +1,50 @@
+<div class="login-form">
+
+    <div class="shadow-lg card" style="width: 28rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Sign in to continue</h5>
+        </div>
+
+        <hr />
+
+        <div class="card-body p-6">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input id="username" class="form-control" type="text" [formControlName]="'username'" />
+                    <small class="form-text text-danger"
+                        *ngIf="formControls.username.touched && formControls.username.errors?.required">
+                        Please enter Username!
+                    </small>
+                </div>
+                <div>
+                    <label>Password</label>
+                </div>
+                <div class="input-group">
+
+                    <input class="form-control border-right-0" id="password" [type]="inputType"
+                        [formControlName]="'password'">
+                    <span class="input-group-append bg-white" (click)="showHidePassword()">
+                        <button class="btn border border-left-0" type="button" disabled><i [class]="classIcon"
+                                aria-hidden="true"></i></button>
+                    </span>
+
+                </div>
+                <div>
+                    <small class="form-text text-danger"
+                        *ngIf="formControls.password.touched && formControls.password.errors?.required">
+                        Please enter Password!
+                    </small></div>
+                <small class="form-text text-center text-danger">
+                    <b>{{errorMsg}}</b>
+                </small>
+                <div class="form-group mt-5">
+                    <button type="submit" class="btn btn-primary col-12" [disabled]="!loginForm.valid">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<so-spinner></so-spinner>

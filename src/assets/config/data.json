@@ -1,0 +1,55 @@
+{
+    "gnodeb1": [
+        {
+            "config": "service_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "radio_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "cucp_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "cuup_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "du_config",
+            "component": ""
+        }
+    ],
+    "gnodeb2": [
+        {
+            "config": "service_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "radio_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "cucp_config",
+            "path": "",
+            "component": " "
+        },
+        {
+            "config": "cuup_config",
+            "path": " ",
+            "component": " "
+        },
+        {
+            "config": "du_config",
+            "path": "",
+            "component": " "
+        }
+    ]
+}

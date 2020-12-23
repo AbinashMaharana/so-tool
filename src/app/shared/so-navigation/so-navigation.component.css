@@ -1,0 +1,48 @@
+.left-menu {
+    display: flex;
+    max-width: 90px;
+    float: left;
+    flex: 10%;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.bg-black {
+    background-color: #1a242d;
+}
+
+.menu-lists {
+    padding: 0px;
+}
+
+p {
+    margin: 0px !important;
+}
+
+.menu-lists>div>li {
+    color: #bbbcbe;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu-lists>div>li.active {
+    background-color: #1472bb;
+    color: #ffffff;
+}
+div.active > li {
+    background-color: #1472bb;
+    color: #ffffff !important;
+}

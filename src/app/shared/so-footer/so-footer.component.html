@@ -1,0 +1,14 @@
+<div class="clearfix"></div>
+<div class="custom-footer bg-white" [ngClass]="{'custom-width' : isSideMenuVisible}">
+    <hr />
+    <div class="mt-4">
+        <div class="justify-content-between hide-overflow">
+            <div class="pull-left">
+                <button class="ml-1 btn btn-light border" [hidden]="!prevBtnLabel" (click)="prev()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{prevBtnLabel}}</button>
+            </div>
+            <div class="pull-right text-right">
+                <button class="mr-1 btn btn-sm btn-primary" [disabled]="nxtBtn" (click)="next()">{{nxtBtnLabel}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

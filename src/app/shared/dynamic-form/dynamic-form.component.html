@@ -1,0 +1,6 @@
+<form class="dynamic-form form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+    <div>
+        <ng-container *ngFor="let field of config" dynamicField [config]="field" [model]="model" [group]="form">
+        </ng-container>
+    </div>
+</form>
