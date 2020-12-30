@@ -38,7 +38,7 @@ export class DynamicFormComponent implements OnInit {
   createGroup() {
     const group = this.fb.group({});
    for(let i = 0; i < this.formConfig.length; i++){
-    this.inputFieldConfig.forEach((control) => {
+    this.formConfig[i].fields.forEach((control) => {
       if (control.type == "table") {      
         group.addControl(control.name, new FormArray([]));       
         return group;
