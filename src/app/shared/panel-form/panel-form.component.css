@@ -1,0 +1,16 @@
+.bold-font{
+    font-weight: 500; 
+    color: #1c2128;
+}
+
+::ng-deep .card-header{
+    padding: 0px;
+}
+
+::ng-deep .mat-row {
+    height: auto !important;
+  }
+  
+  ::ng-deep .mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type {
+    padding: 8px 8px 8px 8px !important;
+  }

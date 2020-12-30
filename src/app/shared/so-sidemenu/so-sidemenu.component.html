@@ -1,0 +1,82 @@
+<div class="side-menu">
+    <div [ngClass]="show ? 'active' : 'hide'" [hidden]="!show" class="menu-wrapper">
+        <header>
+            <div class="pull-right text-white menu-hide">
+                <button class="btn btn-sm btn-circle btn-default bg-white" (click)="hideMenu();"><span
+                        class="fa fa-angle-left" aria-hidden="true"></span></button>
+            </div>
+            <nav class="nav" role="navigation">
+                <ul class="nav__list">
+                    <li *ngFor="let menulist of submenuList; let indexOfelement = index;"
+                        [class.disabled]="menulist.disabled" [class.active]="!menulist.disabled"
+                        (click)="hideSubMenu(menulist?.firstLevel);navigate($event,menulist.route);">
+                        <input id="group-{{indexOfelement+1}}" type="checkbox" hidden />
+                        <label for="group-{{indexOfelement+1}}">
+                            <i *ngIf="menulist.status == 'pending'" class="text-danger fa fa-times-circle"></i>
+                            <i *ngIf="menulist.status == 'completed'" class="text-success fa fa-check-circle"></i>
+                            <span class="fa fa-caret-right" *ngIf="menulist?.firstLevel.length > 0"></span>
+                            {{menulist.displayName}} </label>
+                        <!-- First Level Menu-->
+                        <ul class="group-list" *ngIf="menulist.firstLevel.length > 0">
+                            <li *ngFor="let levelMenu of menulist?.firstLevel; let indexOfelement = index;"
+                                [class.disabled]="levelMenu.disabled" [class.active]="!levelMenu.disabled"
+                                (click)="hideSubMenu(levelMenu.children);navigate($event,levelMenu.route);">
+                                <a *ngIf="!levelMenu.children"> <i *ngIf="menulist.status == 'pending'"
+                                        class="text-danger fa fa-times-circle"></i>
+                                    <i *ngIf="menulist.status == 'completed'"
+                                        class="text-success fa fa-check-circle"></i>
+                                    {{levelMenu.displayName}}</a>
+                                <input *ngIf="levelMenu.children && levelMenu.children.length > 0"
+                                    id="sub-group-{{indexOfelement+1}}" type="checkbox" hidden />
+                                <label *ngIf="levelMenu.children && levelMenu.children?.length > 0"
+                                    for="sub-group-{{indexOfelement+1}}">
+                                    <i *ngIf="menulist.status == 'pending'" class="text-danger fa fa-times-circle"></i>
+                                    <i *ngIf="menulist.status == 'completed'"
+                                        class="text-success fa fa-check-circle"></i>
+                                    <span class="fa fa-caret-right"></span> {{levelMenu.displayName}}</label>
+                                <!-- Second Level Menu-->
+                                <ul *ngIf="levelMenu.children && levelMenu.children.length > 0" class="sub-group-list">
+                                    <li *ngFor="let secondLevel of levelMenu.children; let indexOfelement = index;"
+                                        [class.disabled]="secondLevel.disabled" [class.active]="!secondLevel.disabled"
+                                        (click)="hideSubMenu(levelMenu.children);navigate($event,secondLevel.route)"><a
+                                            *ngIf="!secondLevel?.subChildren">
+                                            <i *ngIf="menulist.status == 'pending'"
+                                                class="text-danger fa fa-times-circle"></i>
+                                            <i *ngIf="menulist.status == 'completed'"
+                                                class="text-success fa fa-check-circle"></i>
+                                            {{secondLevel.displayName}}</a>
+                                        <input *ngIf="secondLevel.subChildren && secondLevel.subChildren.length > 0"
+                                            id="sub-sub-group-{{indexOfelement+1}}" type="checkbox" hidden />
+                                        <label *ngIf="secondLevel.subChildren && secondLevel.subChildren.length > 0"
+                                            for="sub-sub-group-{{indexOfelement+1}}">
+                                            <i *ngIf="menulist.status == 'pending'"
+                                                class="text-danger fa fa-times-circle"></i>
+                                            <i *ngIf="menulist.status == 'completed'"
+                                                class="text-success fa fa-check-circle"></i>
+                                            <span class="fa fa-caret-right"></span>
+                                            {{secondLevel.displayName}} </label>
+                                        <!-- Third Level Menu-->
+                                        <ul *ngIf="secondLevel.subChildren && secondLevel.subChildren.length > 0"
+                                            class="sub-sub-group-list">
+                                            <li *ngFor="let thirdLevel of secondLevel?.subChildren; let indexOfelement = index;"
+                                                (click)="hideSubMenu(thirdLevel.subChildren);">
+                                                <a> <i
+                                                        class="text-danger fa fa-times-circle"></i>{{thirdLevel.displayName}}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <button [hidden]="showSideMenu" class="btn btn-sm btn-circle btn-default menu-show bg-white" (click)="showMenu()">
+        <span class="fa fa-angle-right" aria-hidden="true"></span></button>
+
+</div>

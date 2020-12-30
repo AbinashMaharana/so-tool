@@ -1,0 +1,17 @@
+<nav class="navbar fixed-top navbar-light bg-light justify-content-between layout-header">
+    <a class="navbar-brand" href="#/dashboard">
+        <img src="assets/images/so-logo.png" class="img-responsive d-inline-block align-top" alt="">
+    </a>
+    <form class="form-inline">
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle custom-btn" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Welcome Super Admin
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" routerLink="/" [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{exact: true}" (click)="userLogOut();">Log Out</a>
+            </div>
+        </div>
+    </form>
+</nav>

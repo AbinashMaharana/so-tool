@@ -1,0 +1,8 @@
+.bold-font{
+    font-weight: 500; 
+    color: #1c2128;
+}
+
+.card-header::ng-deep{
+    padding: 0px;
+}

@@ -1,0 +1,29 @@
+<!-- <pre>{{ group.value | json }}</pre> -->
+<!-- <div class="form-row">
+
+</div> -->
+<div class="form-row" [formGroup]="group">
+  <label *ngIf="inputFieldConfig.label" class="col-md-6 col-form-label">{{ inputFieldConfig.label }}</label>
+  <div class="col-md-4">
+    <mat-table #table [dataSource]="dataSource" [formArrayName]="[inputFieldConfig.name]" class="mat-elevation-z8">
+      <!-- Generic column definition -->
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+        <mat-header-cell *matHeaderCellDef>{{ column.header }}</mat-header-cell>
+        <mat-cell *matCellDef="let row; let index = index" [formGroupName]="index">
+          <input *ngIf="column.type=='checkbox'" type="checkbox" [attr.placeholder]="column.columnDef">
+          <input *ngIf="column.type=='input'" type="text" class="form-control" [formControlName]="column.cell(row)"
+           (change)="addRow()">
+          <button *ngIf="column.type=='button'" class="btn btn-sm btn-link" type="button" (click)="deleteRow(index)"
+            [disabled]="index == 0"><span class="fa fa-trash"></span></button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
+<!-- <div class="form-row" [formGroup]="group">
+  <label class="col-md-6 col-form-label">{{ inputFieldConfig.label }}</label>
+  <input type="text" class="form-control col-md-3" [attr.placeholder]="inputFieldConfig.placeholder"
+    [formControlName]="inputFieldConfig.name">
+</div> -->

@@ -1,0 +1,49 @@
+<form class="form-horizontal" [formGroup]="venueDetailsForm" novalidate>
+    <div class="form-group row">
+        <label class="control-label col-md-4" for="customer">Select Customer<sup class="text-danger">*</sup></label>
+        <div class="col-md-3">
+            <div class="input-group">
+                <input id="customerName" class="form-control input-sm" type="text" [formControlName]="'customerName'"
+                aria-label="Text input with dropdown button" (input)="isValidForm();" list="customers">  
+                <datalist id="customers">
+                  <option *ngFor="let customer of customersList" [value]="customer.cusotmerName"></option>
+                </datalist>                
+            </div>
+            <div>
+                <small class="form-text text-danger"
+                    *ngIf="formControls.customerName.touched && formControls.customerName.errors?.required">
+                    Please enter Customer!
+                </small>                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-4" for="venue name">Venue Name<sup class="text-danger">*</sup></label>
+        <div class="col-md-3">
+            <input id="venueName" class="form-control input-sm" type="text" [formControlName]="'venueName'"
+                (input)="validateVenueName(formControls.customerName.value);isValidForm();"/>
+            <div>
+                <small class="form-text text-danger"
+                    *ngIf="formControls.venueName.touched && formControls.venueName.errors?.required">
+                    Please enter Venue Name!
+                </small>
+                <small class="form-text text-danger"
+                *ngIf="isDuplicate && formControls.venueName.value">
+                Venue Name given already exists for this customer !
+            </small>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+<div class="card mt-1">    
+    <div class="card-body">        
+        <so-import-file [form]="form" [config]="importConfig" [fileType]="fileType"
+            [importedFile]="importedFile" [sampleFileName]="sampleFileName" [supportedFiles]="supportedFiles"
+            (emitMultiFileImport)="importFile($event)"></so-import-file>
+    </div>
+</div>

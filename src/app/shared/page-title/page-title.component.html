@@ -1,0 +1,31 @@
+<div class="card bg-white justify-content-between border-none page-details" [ngClass]="{'custom-width' : isSideMenuVisible}">
+    <div class="card-header custom-header">
+        <div class="row">
+            <div class="col-6 col-md-10">
+                <app-breadcrumb></app-breadcrumb>
+            </div>
+            <div class="col-5 col-md-2">
+                <button class="pull-right btn btn-sm btn-primary col-xs-12 col-md-12" [hidden]="showVenueBtn" (click)="addNewVenue()">Add New Venue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card bg-white border-none customer-details" [hidden]="showVenueDetail" [ngClass]="{'custom-width' : isSideMenuVisible}">
+    <div class="card-header custom-header">
+        <div class="row site-details">
+            <div class="col-12 col-md-2">
+                <label>Customer: </label> <b> {{venueDetails.customer}}</b>
+            </div>
+            <div class="col-12 col-md-3">
+                <label>Site Name: </label> <b> {{venueDetails.venueName}}</b>
+            </div>
+            <div class="col-12 col-md-7">
+                <label>Location: </label>
+                    <span class="fa fa-map-marker text-primary map-marker">
+                    </span>
+                    <span class="map-address">{{venueDetails.location}}</span>
+            </div>
+        </div>
+    </div>
+</div>

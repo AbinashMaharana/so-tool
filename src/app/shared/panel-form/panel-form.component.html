@@ -1,0 +1,31 @@
+<div>
+    <button *ngIf="!toggleBtn" class="btn btn-sm btn-default border" (click)="openAll();">
+        Expand All
+    </button>
+    <button *ngIf="toggleBtn" class="btn btn-sm btn-default border" (click)="closeAll();">
+        Collapse All
+    </button>
+    <span class="ml-2"><sup class="text-danger">*</sup>Indicates mandatory configurations</span>
+</div>
+
+
+<div class="mt-3">
+<ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+    <ngb-panel *ngFor="let panelForm of config; let i=index;" id="panel-{{i}}">
+        <ng-template ngbPanelTitle>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex p-1 bold-font"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+                <div class="d-flex bold-font"> <span class="mr-2"><i *ngIf="panelForm.status == 'pending'"
+                            class="text-danger fa fa-times-circle"></i>
+                        <i *ngIf="panelForm.status == 'completed'"
+                            class="text-success fa fa-check-circle"></i></span>{{panelForm.section}}
+                </div>
+            </div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <dynamic-form [form]="form" [model]="model" [formConfig]="config" [inputFieldConfig]="panelForm.fields" (submitted)="formSubmitted($event)">
+            </dynamic-form>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
+</div>

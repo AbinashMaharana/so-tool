@@ -1,0 +1,107 @@
+[
+    {
+       "displayName":"Venue Details",
+       "iconName":"globe",
+       "route":"/venue_planning/venue_details",
+       "submenu":false,
+       "status":"done",
+       "disabled":false,
+       "firstLevel":[
+          
+       ]
+    },
+    {
+       "displayName":"Import Input Files",
+       "iconName":"globe",
+       "route":"/venue_planning/import_files",
+       "submenu":false,
+       "status":"notdone",
+       "disabled":true,
+       "firstLevel":[
+          
+       ]
+    },
+    {
+       "displayName":"Venue Configuration",
+       "iconName":"globe",
+       "route":"/venue_planning/venue_configuration",
+       "submenu":true,
+       "status":"notdone",
+       "disabled":true,
+       "firstLevel":[
+          {
+             "displayName":"VNF Manager",
+             "iconName":"globe",
+             "route":"/venue_planning/venue_configuration/vnf_manager",
+             "children":[
+                {
+                   "displayName":"Summary and Export",
+                   "iconName":"globe",
+                   "route":"/venue_planning/venue_configuration/vnf_manager/summary_export",
+                   "status":"done"
+                }
+             ]
+          },
+          {
+             "displayName":"gNodeB",
+             "iconName":"globe",
+             "route":"/venue_planning/venue_configuration/gNodeB",
+             "children":[
+                {
+                   "displayName":"gNodeB1",
+                   "iconName":"globe",
+                   "route":"/venue_planning/venue_configuration/gNodeB",
+                   "status":"done",
+                   "subChildren":[
+                      {
+                         "displayName":"Service Configuration",
+                         "iconName":"globe",
+                         "route":"/venue_planning/venue_configuration/gNodeB/service_config",
+                         "status":"done"
+                      },
+                      {
+                         "displayName":"Radio Configuration",
+                         "iconName":"globe",
+                         "route":"/venue_planning/venue_configuration/gNodeB/radio_config",
+                         "status":"done"
+                      },
+                      {
+                         "displayName":"CUCP Configuration",
+                         "iconName":"globe",
+                         "route":"/venue_planning/venue_configuration/gNodeB/cucp_config",
+                         "status":"done"
+                      },
+                      {
+                         "displayName":"CUUP Configuration",
+                         "iconName":"globe",
+                         "route":"/venue_planning/venue_configuration/gNodeB/cuup_config",
+                         "status":"done"
+                      },
+                      {
+                         "displayName":"DU Configuration",
+                         "iconName":"globe",
+                         "route":"/venue_planning/venue_configuration/gNodeB/du_config",
+                         "status":"done"
+                      }
+                   ]
+                }
+             ]
+          },
+          {
+             "displayName":"Edge Cloud",
+             "iconName":"globe",
+             "route":"/venue_planning/venue_configuration/edge_cloud",
+             "submenu":false,
+             "status":"notdone",
+             "children":[
+                {
+                   "displayName":"Summary and Export",
+                   "iconName":"globe",
+                   "route":"/venue_planning/venue_configuration/edge_cloud/export",
+                   "status":"done"
+                }
+             ]
+          }
+       ]
+    }
+ ]

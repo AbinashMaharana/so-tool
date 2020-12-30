@@ -1,0 +1,32 @@
+<header>
+    <so-header (logOut)="signOut();">
+
+    </so-header>
+</header>
+<section class="flex-row">
+
+    <so-navigation (toggle)="toggleSubMenu($event);">
+
+    </so-navigation>
+
+    <so-sidemenu>
+
+    </so-sidemenu>
+
+    <main class="so-wrpper">
+
+        <div class="main-content">
+
+            <page-title></page-title>
+
+            <section class="content">
+
+                <router-outlet>
+
+                </router-outlet>
+            </section>
+        </div>
+        <so-footer></so-footer>
+    </main>
+
+</section>
